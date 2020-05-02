@@ -10,16 +10,16 @@ function getDimensionValue(dimension) {
     if (sessionStorage.getItem(dimension) === null) {
         return 0;
     } else {
-        return Number(sessionStorage.getItem(dimension));    
+        return Number(sessionStorage.getItem(dimension));
     }
-    
+
 }
 
 /**
  * Delete dimension
  * @param {string} dimension Dimension name
  */
-function deleteDimension(dimension){
+function deleteDimension(dimension) {
     sessionStorage.removeItem(dimension);
 }
 
@@ -34,23 +34,38 @@ function addToDimension(dimension, value) {
     sessionStorage.setItem(dimension, dimensionValue);
 }
 
-function displayDimensionValues(){
+/**
+ * Display dimension values in html file
+ */
+function displayDimensionValues() {
     const dimension1 = getDimensionValue("dimension1");
     const dimension2 = getDimensionValue("dimension2");
     jQuery(".dimension1").text(dimension1);
     jQuery(".dimension2").text(dimension2);
 }
 
-deleteDimension("dimension1");
-deleteDimension("dimension2");
+/**
+ * Initialize page
+ */
+{
+    $(".question-block").addClass("hidden");
+    $(".question-block:nth-child(1)").removeClass("hidden");
+    deleteDimension("dimension1");
+    deleteDimension("dimension2");
+}
 
+/**
+ * Button events
+ */
 jQuery(".answer button").on("click", function () {
+    $(this).parents(".question-block").next().removeClass("hidden");
+    $(this).parents(".question-block").addClass("hidden");
     const dimension1 = jQuery(this).data("dimension1");
     const dimension2 = jQuery(this).data("dimension2");
     addToDimension("dimension1", dimension1);
     addToDimension("dimension2", dimension2);
-});
-
-jQuery(".answers-block button").on("click", function () {
-    displayDimensionValues();
+    if ( $(this).parents(".question-block").next().length === 0 ) {
+        $(".answers-block").removeClass("hidden");
+        displayDimensionValues();
+    }
 });
