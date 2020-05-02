@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Quiz boilerplate</title>
+    <title>Quiz name</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -23,18 +23,15 @@
     <![endif]-->
 
     <h1>Quiz name</h1>
-    
-    
+
     <script>
-    // CONFIGURATION
-        
-    const quiz_dimensions = ["dimension1", "dimension2"];
-    
+        // CONFIGURE NAMES OF DIMENSIONS
+        const quiz_dimensions = ["dimension1", "dimension2"];
     </script>
-    
+
     <div class="questions-block">
         <h2>Questions</h2>
-        
+
         <div class="question-block">
             <p class="question">Question text question 1</p>
             <div class="answer">
@@ -43,7 +40,7 @@
                 <button type="button" data-dimension1="15" data-dimension2="-15">Option 3</button>
             </div>
         </div>
-        
+
         <div class="question-block">
             <p class="question">Question text question 2</p>
             <div class="answer">
@@ -54,18 +51,20 @@
         </div>
 
     </div>
-        
+
     <div class="answers-block hidden">
         <h2>Results</h2>
         <p>Dimension 1: <span data-display="dimension1"></span></p>
         <p>Dimension 2: <span data-display="dimension2"></span></p>
     </div>
-    
+
     <script src="js/vendor/modernizr-3.8.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>
         /* jshint browser: true */
-        if (!window.jQuery) { document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>'); }
+        if (!window.jQuery) {
+            document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>');
+        }
     </script>
     <script src="js/main.js"></script>
 
