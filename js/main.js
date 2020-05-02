@@ -50,8 +50,10 @@ function displayDimensionValues() {
 {
     $(".question-block").addClass("hidden");
     $(".question-block").first().removeClass("hidden");
-    deleteDimension("dimension1");
-    deleteDimension("dimension2");
+    
+    quiz_dimensions.forEach(function(dimensionName){
+        deleteDimension(dimensionName);
+    });
 }
 
 /**
