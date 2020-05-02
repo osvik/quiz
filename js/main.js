@@ -12,7 +12,6 @@ function getDimensionValue(dimension) {
     } else {
         return Number(sessionStorage.getItem(dimension));
     }
-
 }
 
 /**
@@ -39,7 +38,7 @@ function addToDimension(dimension, value) {
  */
 function displayDimensionValues() {
     const dimensions = [];
-    quiz_dimensions.forEach(function(dimensionName){
+    quiz_dimensions.forEach((dimensionName)=>{
         dimensions[dimensionName] = getDimensionValue(dimensionName);
         jQuery("[data-display=" + dimensionName + "]").text(dimensions[dimensionName]);
     });
@@ -51,8 +50,7 @@ function displayDimensionValues() {
 {
     $(".question-block").addClass("hidden");
     $(".question-block").first().removeClass("hidden");
-    
-    quiz_dimensions.forEach(function(dimensionName){
+    quiz_dimensions.forEach((dimensionName)=>{
         deleteDimension(dimensionName);
     });
 }
