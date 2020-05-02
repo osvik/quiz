@@ -34,9 +34,23 @@ function addToDimension(dimension, value) {
     sessionStorage.setItem(dimension, dimensionValue);
 }
 
+function displayDimensionValues(){
+    const dimension1 = getDimensionValue("dimension1");
+    const dimension2 = getDimensionValue("dimension2");
+    jQuery(".dimension1").text(dimension1);
+    jQuery(".dimension2").text(dimension2);
+}
+
+deleteDimension("dimension1");
+deleteDimension("dimension2");
+
 jQuery(".answer button").on("click", function () {
     const dimension1 = jQuery(this).data("dimension1");
     const dimension2 = jQuery(this).data("dimension2");
     addToDimension("dimension1", dimension1);
     addToDimension("dimension2", dimension2);
+});
+
+jQuery(".answers-block button").on("click", function () {
+    displayDimensionValues();
 });
