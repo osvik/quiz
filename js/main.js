@@ -61,10 +61,11 @@ function displayDimensionValues() {
 jQuery(".answer button").on("click", function () {
     $(this).parents(".question-block").next().removeClass("hidden");
     $(this).parents(".question-block").addClass("hidden");
-    const dimension1 = jQuery(this).data("dimension1");
-    const dimension2 = jQuery(this).data("dimension2");
-    addToDimension("dimension1", dimension1);
-    addToDimension("dimension2", dimension2);
+    const dimensions = [];
+    quiz_dimensions.forEach((dimensionName)=>{
+        dimensions[dimensionName] = jQuery(this).data(dimensionName);
+        addToDimension(dimensionName, dimensions[dimensionName]);
+    });
     if ( $(this).parents(".question-block").next().length === 0 ) {
         $(".answers-block").removeClass("hidden");
         $(".questions-block").addClass("hidden");
