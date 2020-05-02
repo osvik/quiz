@@ -38,10 +38,11 @@ function addToDimension(dimension, value) {
  * Display dimension values in html file
  */
 function displayDimensionValues() {
-    const dimension1 = getDimensionValue("dimension1");
-    const dimension2 = getDimensionValue("dimension2");
-    jQuery(".dimension1").text(dimension1);
-    jQuery(".dimension2").text(dimension2);
+    const dimensions = [];
+    quiz_dimensions.forEach(function(dimensionName){
+        dimensions[dimensionName] = getDimensionValue(dimensionName);
+        jQuery("[data-display=" + dimensionName + "]").text(dimensions[dimensionName]);
+    });
 }
 
 /**
