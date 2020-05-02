@@ -58,7 +58,7 @@ function displayDimensionValues() {
 /**
  * Button events
  */
-jQuery(".answer button").on("click", function () {
+jQuery(".answer > *").on("click", function () {
     $(this).parents(".question-block").next().removeClass("hidden");
     $(this).parents(".question-block").addClass("hidden");
     const dimensions = [];
