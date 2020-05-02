@@ -49,7 +49,7 @@ function displayDimensionValues() {
  */
 {
     $(".question-block").addClass("hidden");
-    $(".question-block:nth-child(1)").removeClass("hidden");
+    $(".question-block").first().removeClass("hidden");
     deleteDimension("dimension1");
     deleteDimension("dimension2");
 }
@@ -66,6 +66,7 @@ jQuery(".answer button").on("click", function () {
     addToDimension("dimension2", dimension2);
     if ( $(this).parents(".question-block").next().length === 0 ) {
         $(".answers-block").removeClass("hidden");
+        $(".questions-block").addClass("hidden");
         displayDimensionValues();
     }
 });
