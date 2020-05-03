@@ -48,8 +48,8 @@ function displayDimensionValues() {
  * Initialize page
  */
 {
-    $(".question-block").addClass("hidden");
-    $(".question-block").first().removeClass("hidden");
+    jQuery(".question-block").addClass("hidden");
+    jQuery(".question-block").first().removeClass("hidden");
     quiz_dimensions.forEach((dimensionName)=>{
         deleteDimension(dimensionName);
     });
@@ -59,16 +59,16 @@ function displayDimensionValues() {
  * Click events to answer and move to the next page
  */
 jQuery(".answer > *").on("click", function () {
-    $(this).parents(".question-block").next().removeClass("hidden");
-    $(this).parents(".question-block").addClass("hidden");
+    jQuery(this).parents(".question-block").next().removeClass("hidden");
+    jQuery(this).parents(".question-block").addClass("hidden");
     const dimensions = [];
     quiz_dimensions.forEach((dimensionName)=>{
         dimensions[dimensionName] = jQuery(this).data(dimensionName) || 0;
         addToDimension(dimensionName, dimensions[dimensionName]);
     });
-    if ( $(this).parents(".question-block").next().length === 0 ) {
-        $(".answers-block").removeClass("hidden");
-        $(".questions-block").addClass("hidden");
+    if ( jQuery(this).parents(".question-block").next().length === 0 ) {
+        jQuery(".answers-block").removeClass("hidden");
+        jQuery(".questions-block").addClass("hidden");
         displayDimensionValues();
     }
 });
