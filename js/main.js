@@ -63,7 +63,7 @@ jQuery(".answer > *").on("click", function () {
     $(this).parents(".question-block").addClass("hidden");
     const dimensions = [];
     quiz_dimensions.forEach((dimensionName)=>{
-        dimensions[dimensionName] = jQuery(this).data(dimensionName);
+        dimensions[dimensionName] = jQuery(this).data(dimensionName) || 0;
         addToDimension(dimensionName, dimensions[dimensionName]);
     });
     if ( $(this).parents(".question-block").next().length === 0 ) {
