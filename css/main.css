@@ -35,3 +35,12 @@ header {
 footer {
     margin-top: 4rem;
 }
+
+h1, h2, h3 {
+    font-family: Rubik,sans-serif;
+    font-weight: 700;
+}
+
+body {
+    font: 15px/21px "Work Sans",sans-serif;
+}
