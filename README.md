@@ -7,4 +7,4 @@
 
 ## How to create a quiz
 
-Most quizes can be created by editing the examples in the `index.html` file. You just need to know some html and modify the given examples.
+Most quizzes can be created by editing the examples in the `index.html` file. You just need to know some html and modify the given examples.
