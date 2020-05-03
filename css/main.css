@@ -19,4 +19,6 @@
     cursor: pointer;
 }
 
-
+.answer p, .answer div  {
+    margin: 0.5em 0 0.5em 0;
+}
