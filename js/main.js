@@ -56,7 +56,7 @@ function displayDimensionValues() {
 }
 
 /**
- * Button events
+ * Click events to answer and move to the next page
  */
 jQuery(".answer > *").on("click", function () {
     $(this).parents(".question-block").next().removeClass("hidden");
