@@ -1,5 +1,5 @@
 /* jshint browser: true,  esversion: 6 */
-/* global jQuery */
+/* global jQuery, quiz_dimensions */
 
 /**
  * Get dimension value
