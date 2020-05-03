@@ -52,6 +52,8 @@ function displayDimensionValues() {
     jQuery(".question-block").first().removeClass("hidden");
     const numberOfQuestions = jQuery(".question-block").length;
     jQuery("[data-display=total_questions").text(numberOfQuestions);
+    var currentQuestion = 1;
+    jQuery("[data-display=current_question").text(currentQuestion);
     quiz_dimensions.forEach((dimensionName)=>{
         deleteDimension(dimensionName);
     });
@@ -63,6 +65,8 @@ function displayDimensionValues() {
 jQuery(".answer > *").on("click", function () {
     jQuery(this).parents(".question-block").next().removeClass("hidden");
     jQuery(this).parents(".question-block").addClass("hidden");
+    currentQuestion++
+    jQuery("[data-display=current_question").text(currentQuestion);
     const dimensions = [];
     quiz_dimensions.forEach((dimensionName)=>{
         dimensions[dimensionName] = jQuery(this).data(dimensionName) || 0;
