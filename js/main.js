@@ -50,6 +50,8 @@ function displayDimensionValues() {
 {
     jQuery(".question-block").addClass("hidden");
     jQuery(".question-block").first().removeClass("hidden");
+    const numberOfQuestions = jQuery(".question-block").length;
+    jQuery("[data-display=total_questions").text(numberOfQuestions);
     quiz_dimensions.forEach((dimensionName)=>{
         deleteDimension(dimensionName);
     });
